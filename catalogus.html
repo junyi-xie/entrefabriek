@@ -1,0 +1,1015 @@
+<!-- Versie: 1.1 -->
+<!-- Author: Aron Dosti & Yunyi Xie -->
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://kit.fontawesome.com/b57a0b7ac6.js" crossorigin="anonymous"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.2/css/bootstrap-select.min.css"
+    rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.1.0/css/flag-icon.min.css" rel="stylesheet">
+  <title>Catalogus - Entré-Fabriek.nl</title>
+  <style>
+    #container {
+      width: 100%;
+      position: absolute;
+      background-color: #AFAFAF;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    #header {
+      width: 100%;
+      height: 90px;
+      background-image: linear-gradient(to bottom, #989898, #AFAFAF);
+      margin: 0 auto;
+    }
+
+    #zoekholder {
+      width: 90%;
+      margin: 0 auto;
+    }
+
+    #bar {
+      width: 500px;
+      height: 90px;
+      float: left;
+      position: relative;
+    }
+
+    #navigation {
+      margin: 0 auto;
+      width: 30%;
+      height: 30px;
+      padding-top: -5px;
+      position: relative;
+      text-align: center;
+    }
+
+    #logo {
+      margin: 0 auto;
+      width: 150px;
+      height: 90px;
+      background-image: url("logo.jpg");
+      background-size: cover;
+    }
+
+    #navigation ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      position: relative;
+      z-index: 2;
+      display: block;
+      padding: 2px;
+    }
+
+    #navigation ul li {
+      display: inline-block;
+    }
+
+    #navigation a {
+      display: block;
+      padding: 0 10px;
+      text-decoration: none;
+      font-size: 20px;
+    }
+
+    #navigation a:hover {
+      color: black;
+      text-decoration: underline;
+    }
+
+    #login {
+      float: right;
+      margin: 0 auto;
+      padding-top: 30px;
+      width: 35px;
+      height: 35px;
+    }
+
+    #loginholder {
+      width: 55px;
+      height: 90px;
+      position: relative;
+      float: right;
+    }
+
+    #languageholder {
+      height: 90px;
+      width: 150px;
+      float: right;
+      position: relative;
+      padding: -5px;
+    }
+
+    #language {
+      height: 90px;
+      width: 150px;
+      margin-top: 30px;
+      margin-left: 20px;
+    }
+
+    #holdersome {
+      width: 90%;
+      margin: 0 auto;
+    }
+
+    #footer {
+      text-align: center;
+      width: 100%;
+      height: 40px;
+      background-color: #989898;
+    }
+
+    #productholder12 {
+      width: 90%;
+      height: 250px;
+      position: relative;
+      margin: 0 auto;
+    }
+
+    #holder1 {
+      width: 50%;
+      height: 250px;
+      float: left;
+    }
+
+    #holder2 {
+      width: 50%;
+      height: 250px;
+      float: right;
+    }
+
+    #productholder34 {
+      width: 90%;
+      height: 250px;
+      position: relative;
+      margin: 0 auto;
+    }
+
+    #holder3 {
+      width: 50%;
+      height: 250px;
+      float: left;
+    }
+
+    #holder4 {
+      width: 50%;
+      height: 250px;
+      float: right;
+    }
+
+    #productholder56 {
+      width: 90%;
+      height: 250px;
+      position: relative;
+      margin: 0 auto;
+    }
+
+    #holder5 {
+      width: 50%;
+      height: 250px;
+      float: left;
+    }
+
+    #holder6 {
+      width: 50%;
+      height: 250px;
+      float: right;
+    }
+
+    #productholder78 {
+      width: 90%;
+      height: 250px;
+      position: relative;
+      margin: 0 auto;
+    }
+
+    #holder7 {
+      width: 50%;
+      height: 250px;
+      float: left;
+    }
+
+    #holder8 {
+      width: 50%;
+      height: 250px;
+      float: right;
+    }
+
+    #foto1 {
+      float: left;
+      width: 200px;
+      height: 200px;
+      overflow: hidden;
+      box-shadow: 4px 4px 1px 1px #808080;
+      border-radius: 4px;
+    }
+
+    #tekst1 {
+      float: right;
+      width: 250px;
+      height: 200px;
+      box-shadow: 4px 4px 1px 1px #808080;
+      border-radius: 4px;
+    }
+
+    #foto2 {
+      float: left;
+      width: 200px;
+      height: 200px;
+      overflow: hidden;
+      box-shadow: 4px 4px 1px 1px #808080;
+      border-radius: 4px;
+    }
+
+    #tekst2 {
+      float: right;
+      width: 250px;
+      height: 200px;
+      box-shadow: 4px 4px 1px 1px #808080;
+      border-radius: 4px;
+    }
+
+    #foto3 {
+      float: left;
+      width: 200px;
+      height: 200px;
+      overflow: hidden;
+      box-shadow: 4px 4px 1px 1px #808080;
+      border-radius: 4px;
+    }
+
+    #tekst3 {
+      float: right;
+      width: 250px;
+      height: 200px;
+      box-shadow: 4px 4px 1px 1px #808080;
+      border-radius: 4px;
+    }
+
+    #foto4 {
+      float: left;
+      width: 200px;
+      height: 200px;
+      overflow: hidden;
+      box-shadow: 4px 4px 1px 1px #808080;
+      border-radius: 4px;
+    }
+
+    #tekst4 {
+      float: right;
+      width: 250px;
+      height: 200px;
+      box-shadow: 4px 4px 1px 1px #808080;
+      border-radius: 4px;
+    }
+
+    #foto5 {
+      float: left;
+      width: 200px;
+      height: 200px;
+      overflow: hidden;
+      box-shadow: 4px 4px 1px 1px #808080;
+      border-radius: 4px;
+    }
+
+    #tekst5 {
+      float: right;
+      width: 250px;
+      height: 200px;
+      box-shadow: 4px 4px 1px 1px #808080;
+      border-radius: 4px;
+    }
+
+    #foto6 {
+      float: left;
+      width: 200px;
+      height: 200px;
+      overflow: hidden;
+      box-shadow: 4px 4px 1px 1px #808080;
+      border-radius: 4px;
+    }
+
+    #tekst6 {
+      float: right;
+      width: 250px;
+      height: 200px;
+      box-shadow: 4px 4px 1px 1px #808080;
+      border-radius: 4px;
+    }
+
+    #foto7 {
+      float: left;
+      width: 200px;
+      height: 200px;
+      overflow: hidden;
+      box-shadow: 4px 4px 1px 1px #808080;
+      border-radius: 4px;
+    }
+
+    #tekst7 {
+      float: right;
+      width: 250px;
+      height: 200px;
+      box-shadow: 4px 4px 1px 1px #808080;
+      border-radius: 4px;
+    }
+
+    #foto8 {
+      float: left;
+      width: 200px;
+      height: 200px;
+      overflow: hidden;
+      box-shadow: 4px 4px 1px 1px #808080;
+      border-radius: 4px;
+    }
+
+    #tekst8 {
+      float: right;
+      width: 250px;
+      height: 200px;
+      box-shadow: 4px 4px 1px 1px #808080;
+      border-radius: 4px;
+    }
+
+    #search {
+      width: 100%;
+      position: relative;
+      display: flex;
+    }
+
+    #searchTerm {
+      width: 100%;
+      border: 3px solid black;
+      border-right: none;
+      padding: 5px;
+      height: 36px;
+      border-radius: 5px 0 0 5px;
+      outline: none;
+      color: #9DBFAF;
+    }
+
+    #searchTerm:focus {
+      color: black;
+    }
+
+    #searchButton {
+      width: 40px;
+      height: 36px;
+      border: 2px solid black;
+      background: black;
+      text-align: center;
+      color: #fff;
+      border-radius: 0 5px 5px 0;
+      cursor: pointer;
+      font-size: 20px;
+    }
+
+    #wrap {
+      width: 50%;
+      position: relative;
+      float: left;
+      margin-top: 30px;
+    }
+
+    .paddingright {
+      padding: 10px;
+      font-size: 16px;
+      font-family: cursive;
+    }
+
+    #line {
+      margin-left: 1%;
+      width: 98%;
+      background-color: black;
+      height: 1px;
+    }
+
+    .selectpicker {
+      left: -15px;
+    }
+
+    .footer-distributed {
+      background-image: linear-gradient(to top, #989898, #AFAFAF);
+      box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+      box-sizing: border-box;
+      width: 100%;
+      text-align: left;
+      font: bold 16px;
+      padding: 55px 50px;
+    }
+
+    .footer-distributed .footer-left,
+    .footer-distributed .footer-center,
+    .footer-distributed .footer-right {
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    .footer-distributed .footer-left {
+      width: 40%;
+    }
+
+    .footer-distributed h3 {
+      color: #ffffff;
+      font: normal 36px 'Open Sans', cursive;
+      margin: 0;
+    }
+
+    .footer-distributed h3 span {
+      color: lightseagreen;
+    }
+
+    .footer-distributed .footer-links {
+      color: #ffffff;
+      margin: 20px 0 12px;
+      padding: 0;
+    }
+
+    .footer-distributed .footer-links a {
+      display: inline-block;
+      line-height: 1.8;
+      font-weight: 400;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .footer-distributed .footer-company-name {
+      color: white;
+      font-size: 16px;
+      font-weight: normal;
+      margin: 0;
+    }
+
+    .footer-distributed .footer-center {
+      width: 35%;
+    }
+
+    .footer-distributed .footer-center i {
+      background-color: #33383b;
+      color: #ffffff;
+      font-size: 25px;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 42px;
+      margin: 10px 15px;
+      vertical-align: middle;
+    }
+
+    .footer-distributed .footer-center i.fa-envelope {
+      font-size: 17px;
+      line-height: 38px;
+    }
+
+    .footer-distributed .footer-center p {
+      display: inline-block;
+      color: #ffffff;
+      font-weight: 400;
+      vertical-align: middle;
+      margin: 0;
+    }
+
+    .footer-distributed .footer-center p span {
+      display: block;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 2;
+    }
+
+    .footer-distributed .footer-center p a {
+      color: lightseagreen;
+      text-decoration: none;
+      ;
+    }
+
+    .footer-distributed .footer-links a:before {
+      content: "|";
+      font-weight: 300;
+      font-size: 20px;
+      left: 0;
+      color: #fff;
+      display: inline-block;
+      padding-right: 5px;
+    }
+
+    .footer-distributed .footer-links .link-1:before {
+      content: none;
+    }
+
+    .footer-distributed .footer-right {
+      width: 20%;
+    }
+
+    .footer-distributed .footer-company-about {
+      line-height: 20px;
+      color: white;
+      font-size: 16px;
+      font-weight: normal;
+      margin: 0;
+    }
+
+    .footer-distributed .footer-company-about span {
+      display: block;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .footer-distributed .footer-icons {
+      margin-top: 25px;
+    }
+
+    .footer-distributed .footer-icons a {
+      display: inline-block;
+      width: 35px;
+      height: 35px;
+      cursor: pointer;
+      background-color: #33383b;
+      border-radius: 2px;
+      font-size: 20px;
+      color: #ffffff;
+      text-align: center;
+      line-height: 35px;
+      margin-right: 3px;
+      margin-bottom: 5px;
+    }
+
+    .prev {
+      background: #AFAFAF;
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      height: auto;
+      width: auto;
+      padding: 16px;
+      margin-top: -50px;
+      color: black;
+      font-weight: bold;
+      font-size: 16px;
+      transition: 0.6s ease;
+      border-radius: 50%;
+      user-select: none;
+      margin-left: 8px;
+    }
+
+    .next {
+      background: #AFAFAF;
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      height: auto;
+      width: auto;
+      padding: 16px;
+      margin-top: -50px;
+      color: black;
+      font-weight: bold;
+      font-size: 16px;
+      transition: 0.6s ease;
+      border-radius: 50%;
+      user-select: none;
+      margin-left: 150px;
+    }
+
+    .offerte {
+      margin-top: 10px;
+      position: relative;
+      background-color: #AFAFAF;
+      box-shadow: 4px 4px 1px 1px #808080;
+      width: 225px;
+    }
+
+    .box1 {
+      width: 470px;
+      height: 250px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    #somemessageholder {
+      width: 90%;
+      margin: 0 auto;
+      height: 320px;
+    }
+
+    #somemessage {
+      width: 100%;
+      font-size: 16px;
+      font-family: cursive;
+      margin-top: 20px;
+    }
+
+    .head {
+      font-size: 20px;
+      line-height: 20px;
+    }
+
+    .lineheight {
+      line-height: 15px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Placeholder for entire page -->
+  <div id="container">
+
+
+    <!-- Header Section -->
+    <div id="header">
+
+      <div id="holdersome">
+        <!-- Login Placeholder -->
+        <div id="loginholder">
+          <!-- Login/Register -->
+          <div id="login">
+            <i class="fas fa-user-circle fa-3x"></i>
+          </div>
+        </div>
+
+
+        <!-- Language Placeholder -->
+        <div id="languageholder">
+          <!-- Language Switcher -->
+          <div id="language">
+            <select class="selectpicker" data-width="fit">
+              <option data-content='<span class="flag-icon flag-icon-nl"></span> Nederlands'>Nederlands
+              </option>
+              <option data-content='<span class="flag-icon flag-icon-gb"></span> Engels'>Engels</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Searchbar Placeholder -->
+      <div id="zoekholder">
+        <div id="bar">
+          <div id="wrap">
+            <!-- Search Bar -->
+            <div id="search">
+              <!-- Search  -->
+              <input type="text" id="searchTerm" placeholder="Zoeken... ">
+              <!-- Search Icon -->
+              <button type="submit" id="searchButton">
+                <i class="fa fa-search"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Logo 150px 90px -->
+      <div id="logo"></div>
+
+    </div>
+
+
+    <!-- Navigation bar -->
+    <div id="navigation">
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="overons.html">Over Ons</a></li>
+        <li><a href="catalogus.html">Catalogus</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <div id="line"></div>
+
+
+    </div>
+
+    <!-- End of Navigation Bar -->
+
+    <!-- Body Section -->
+
+    <div id="somemessageholder">
+      <div id="somemessage">
+        <div class="head"><strong>Catalogus</strong></div>
+        <div class="lineheight">&nbsp;</div>
+        Met een miljoen bezoekers per jaar en bijzondere ruimtes, is Rozet uniek in haar soort. De grote houten trappen
+        naar beneden brengen je in het erfgoedcentrum, waar verleden, heden en toekomst bij elkaar komen. En vanwaar je
+        de historische kelders in loopt. Deze magische kelders kunnen volledig worden ingericht voor bijeenkomsten en
+        tentoonstellingen.<div class="lineheight">&nbsp;</div>
+        Zowel met de lift als met de houten trappen bereik je de derde, vierde en vijfde verdieping. In de zijvleugels
+        van deze verdiepingen bevinden zich verschillende ruimtes voor uiteenlopende doeleinden.
+        <div class="lineheight">&nbsp;</div>Op de derde en vijfde verdieping vind je ook een expo die zich leent voor
+        verschillende evenementen. Je kunt hier denken aan presentaties, debatten, tentoonstellingen en beurzen. Zelfs
+        een pop-up store behoort tot de mogelijkheden.<div class="lineheight">&nbsp;</div>Het auditorium op de vijfde
+        verdieping is uitermate geschikt voor lezingen en/of bijeenkomsten. Bij mooi weer kunnen op het dak verbindingen
+        worden gelegd, terwijl je ondertussen geniet van het prachtige uitzicht over de stad.
+      </div>
+    </div>
+
+
+
+
+
+    <!-- Product Container #1 & #2 -->
+    <div id="productholder12">
+      <!-- Area Holder #1 -->
+      <div id="holder1">
+        <div class="box1">
+          <!-- Tekst Area #1 -->
+          <div id="tekst1">
+            <div class="paddingright">
+              Basisschool klaslokaal (geen smartboard)<br><br>
+              300m², max 30 leerlingen<br><br>
+              Prijs ter bespreking
+              <button class="offerte">Offerte aanvragen</button>
+            </div>
+          </div>
+          <!-- Foto #1 -->
+          <div id="foto1">
+            <img class="mySlides1" src="products/product1.jpg" style="width:200px; height: 200px;">
+            <img class="mySlides1" src="platje/platform1.jpg" style="width:200px; height: 200px;">
+            <a class="prev" onclick="plusDivs(-1, 0)">&#10094;</a>
+            <a class="next" onclick="plusDivs(1, 0)">&#10095;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Holder #2 -->
+      <div id="holder2">
+        <div class="box1">
+          <!-- Tekst Area #2 -->
+          <div id="tekst2">
+            <div class="paddingright">
+              Basisschool klaslokaal (geen smartboard)<br><br>
+              250m², max 25 leerlingen<br><br>
+              Prijs ter bespreking
+              <button class="offerte">Offerte aanvragen</button>
+            </div>
+          </div>
+          <!-- Foto #2 -->
+          <div id="foto2">
+            <img class="mySlides2" src="products/product2.jpg" style="width:200px; height: 200px;">
+            <img class="mySlides2" src="platje/platform2.jpg" style="width:200px; height: 200px;">
+            <a class="prev" onclick="plusDivs(-1, 1)">&#10094;</a>
+            <a class="next" onclick="plusDivs(1, 1)">&#10095;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product Container #3 & #4 -->
+    <div id="productholder34">
+      <!-- Product Holder #3 -->
+      <div id="holder3">
+        <div class="box1">
+          <!-- Tekst Area #3 -->
+          <div id="tekst3">
+            <div class="paddingright">
+              Basisschool klaslokaal (inclusief smartboard)<br><br>
+              350m², max 35 leerlingen<br><br>
+              Prijs ter bespreking
+              <button class="offerte">Offerte aanvragen</button>
+            </div>
+          </div>
+          <!-- Foto #3 -->
+          <div id="foto3">
+            <img class="mySlides3" src="products/product3.jpg" style="width:200px; height: 200px;">
+            <img class="mySlides3" src="platje/platform3.jpg" style="width:200px; height: 200px;">
+            <a class="prev" onclick="plusDivs(-1, 2)">&#10094;</a>
+            <a class="next" onclick="plusDivs(1, 2)">&#10095;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Holder #4 -->
+      <div id="holder4">
+        <div class="box1">
+          <!-- Text Area #4 -->
+          <div id="tekst4">
+            <div class="paddingright">
+              Basisschool klaslokaal (geen smartboard)<br><br>
+              300m², max 30 leerlingen<br><br>
+              Prijs ter bespreking
+              <button class="offerte">Offerte aanvragen</button>
+            </div>
+          </div>
+          <!-- Foto #4 -->
+          <div id="foto4">
+            <img class="mySlides4" src="products/product4.jpg" style="width:200px; height: 200px;">
+            <img class="mySlides4" src="platje/platform4.jpg" style="width:200px; height: 200px;">
+            <a class="prev" onclick="plusDivs(-1, 3)">&#10094;</a>
+            <a class="next" onclick="plusDivs(1, 3)">&#10095;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Product Container #5 & #6 -->
+    <div id="productholder56">
+      <!-- Product Holder #5 -->
+      <div id="holder5">
+        <div class="box1">
+          <!-- Text Area #5 -->
+          <div id="tekst5">
+            <div class="paddingright">
+              Basisschool klaslokaal (geen smartboard)<br><br>
+              200m², max 25 leerlingen<br><br>
+              Prijs ter bespreking
+              <button class="offerte">Offerte aanvragen</button>
+            </div>
+          </div>
+          <!-- Foto #5 -->
+          <div id="foto5">
+            <img class="mySlides5" src="products/product5.jpg" style="width:200px; height: 200px;">
+            <img class="mySlides5" src="platje/platform5.jpg" style="width:200px; height: 200px;">
+            <a class="prev" onclick="plusDivs(-1, 4)">&#10094;</a>
+            <a class="next" onclick="plusDivs(1, 4)">&#10095;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Holder #6 -->
+      <div id="holder6">
+        <div class="box1">
+          <!-- Text Area #6 -->
+          <div id="tekst6">
+            <div class="paddingright">
+              Basisschool klaslokaal (geen smartboard)<br><br>
+              250m², max 20 leerlingen<br><br>
+              Prijs ter bespreking
+              <button class="offerte">Offerte aanvragen</button>
+            </div>
+          </div>
+          <!-- Foto #6 -->
+          <div id="foto6">
+            <img class="mySlides6" src="products/product6.jpg" style="width:200px; height: 200px;">
+            <img class="mySlides6" src="platje/platform6.jpg" style="width:200px; height: 200px;">
+            <a class="prev" onclick="plusDivs(-1, 5)">&#10094;</a>
+            <a class="next" onclick="plusDivs(1, 5)">&#10095;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product Container #7 & #8 -->
+    <div id="productholder78">
+      <!-- Product Holder #7 -->
+      <div id="holder7">
+        <div class="box1">
+          <!-- Text Area #7 -->
+          <div id="tekst7">
+            <div class="paddingright">
+              Basisschool klaslokaal (inclusief smartboard)<br><br>
+              150m², max 15 leerlingen<br><br>
+              Prijs ter bespreking
+              <button class="offerte">Offerte aanvragen</button>
+            </div>
+          </div>
+          <!-- Foto #7 -->
+          <div id="foto7">
+            <img class="mySlides7" src="products/product7.jpg" style="width:200px; height: 200px;">
+            <img class="mySlides7" src="platje/platform7.jpg" style="width:200px; height: 200px;">
+            <a class="prev" onclick="plusDivs(-1, 6)">&#10094;</a>
+            <a class="next" onclick="plusDivs(1, 6)">&#10095;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Holder #8 -->
+      <div id="holder8">
+        <div class="box1">
+          <!-- Text Area #8 -->
+          <div id="tekst8">
+            <div class="paddingright">
+              Basisschool klaslokaal (geen smartboard)<br><br>
+              300m², max 25 leerlingen<br><br>
+              Prijs ter bespreking
+              <button class="offerte">Offerte aanvragen</button>
+            </div>
+          </div>
+          <!-- Foto #8 -->
+          <div id="foto8">
+            <img class="mySlides8" src="products/product8.jpg" style="width:200px; height: 200px;">
+            <img class="mySlides8" src="platje/platform8.jpg" style="width:200px; height: 200px;">
+            <a class="prev" onclick="plusDivs(-1, 7)">&#10094;</a>
+            <a class="next" onclick="plusDivs(1, 7)">&#10095;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Section -->
+    <div id="footer">
+      <footer class="footer-distributed">
+
+        <div class="footer-left">
+
+          <img src="logo.jpg" style="width: 300px; height: 150px;">
+
+          <p class="footer-links">
+            <a href="home.html" class="link-1">Home</a>
+
+            <a href="overons.html">Over Ons</a>
+
+            <a href="catalogus.html">Catalogus</a>
+
+            <a href="contact.html">Contact</a>
+
+          </p>
+
+          <p class="footer-company-name">Entré-Fabriek © 2019</p>
+        </div>
+
+        <div class="footer-center">
+
+          <div>
+            <i class="fa fa-map-marker"></i>
+            <p><span>Morgenbroek 88</span> 1054 KP Eindhoven, Nederland</p>
+          </div>
+
+          <div>
+            <i class="fa fa-phone"></i>
+            <p>04997-23432</p>
+          </div>
+
+          <div>
+            <i class="fa fa-envelope"></i>
+            <p><a href="mailto:info@entrefabriek.nl">info@entrefabriek.nl</a></p>
+          </div>
+
+        </div>
+
+        <div class="footer-right">
+
+          <p class="footer-company-about">
+            <span>Onze Slogan</span>
+            Geef uw leerlingen de ruimte om te leren!
+          </p>
+
+          <div class="footer-icons">
+
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+
+          </div>
+
+        </div>
+      </footer>
+    </div>
+
+  </div>
+
+  <!-- Script Language Selector -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.2/js/bootstrap-select.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+  <script>
+    var slideIndex = [1, 1, 1, 1, 1, 1, 1, 1];
+    var slideId = ["mySlides1", "mySlides2", "mySlides3", "mySlides4", "mySlides5", "mySlides6", "mySlides7",
+      "mySlides8"
+    ]
+    showDivs(1, 0);
+    showDivs(1, 1);
+    showDivs(1, 2);
+    showDivs(1, 3);
+    showDivs(1, 4);
+    showDivs(1, 5);
+    showDivs(1, 6);
+    showDivs(1, 7);
+
+    function plusDivs(n, no) {
+      showDivs(slideIndex[no] += n, no);
+    }
+
+    function showDivs(n, no) {
+      var i;
+      var x = document.getElementsByClassName(slideId[no]);
+      if (n > x.length) {
+        slideIndex[no] = 1
+      }
+      if (n < 1) {
+        slideIndex[no] = x.length
+      }
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+      }
+      x[slideIndex[no] - 1].style.display = "block";
+    }
+  </script>
+
+  <script id="rendered-js">
+    $(function () {
+      $('.selectpicker').selectpicker();
+    });
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,684 @@
+<!-- Versie: 1.1 -->
+<!-- Author: Aron Dosti & Yunyi Xie -->
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://kit.fontawesome.com/b57a0b7ac6.js" crossorigin="anonymous"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.2/css/bootstrap-select.min.css"
+    rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.1.0/css/flag-icon.min.css" rel="stylesheet">
+  <title>Catalogus - Entré-Fabriek.nl</title>
+  <style>
+    #container {
+      width: 100%;
+      position: absolute;
+      font-family: 'Times New Roman', Times, serif;
+      background-color: #AFAFAF;
+    }
+
+    #header {
+      width: 100%;
+      height: 90px;
+      margin: 0 auto;
+      background-image: linear-gradient(to bottom, #989898, #AFAFAF);
+    }
+
+    #zoekholder {
+      width: 90%;
+      margin: 0 auto;
+    }
+
+    #bar {
+      width: 500px;
+      height: 90px;
+      float: left;
+      position: relative;
+    }
+
+    #navigation {
+      margin: 0 auto;
+      width: 30%;
+      height: 30px;
+      padding-top: -5px;
+      position: relative;
+      text-align: center;
+    }
+
+    #logo {
+      margin: 0 auto;
+      width: 150px;
+      height: 90px;
+      background-image: url("logo.jpg");
+      background-size: cover;
+    }
+
+    #navigation ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      position: relative;
+      z-index: 2;
+      display: block;
+      padding: 2px;
+    }
+
+    #navigation ul li {
+      display: inline-block;
+    }
+
+    #navigation a {
+      display: block;
+      padding: 0 10px;
+      text-decoration: none;
+      font-size: 20px;
+    }
+
+    #navigation a:hover {
+      color: black;
+      text-decoration: underline;
+    }
+
+    #login {
+      float: right;
+      margin: 0 auto;
+      padding-top: 30px;
+      width: 35px;
+      height: 35px;
+    }
+
+    #loginholder {
+      width: 55px;
+      height: 90px;
+      position: relative;
+      float: right;
+    }
+
+    #languageholder {
+      height: 90px;
+      width: 150px;
+      float: right;
+      position: relative;
+      padding: -5px;
+    }
+
+    #language {
+      height: 90px;
+      width: 150px;
+      margin-top: 30px;
+      margin-left: 20px;
+    }
+
+    #holder {
+      width: 90%;
+      margin: 0 auto;
+      height: 420px;
+      border: solid 1px red;
+    }
+
+    #footer {
+      text-align: center;
+      width: 100%;
+      height: 40px;
+      background-color: #989898;
+    }
+
+    #contactform {
+      padding-top: 25px;
+      width: 50%;
+      height: 430px;
+      float: right;
+    }
+
+    #contactcenter {
+      margin: 0 auto;
+      position: relative;
+      height: 430px;
+    }
+
+    #holdersome {
+      width: 90%;
+      margin: 0 auto;
+    }
+
+    input#name {
+      width: 100%;
+      padding: 7px;
+      border: solid 1px black;
+      border-radius: 4px;
+      box-sizing: border-box;
+      margin-top: 6px;
+      margin-bottom: 16px;
+      resize: vertical;
+      margin: 0 auto;
+    }
+
+    textarea {
+      width: 100%;
+      padding: 7px;
+      border: solid 1px black;
+      border-radius: 4px;
+      box-sizing: border-box;
+      margin-top: 6px;
+      margin-bottom: 16px;
+      resize: vertical;
+      margin: 0 auto;
+    }
+
+    input#email {
+      width: 100%;
+      padding: 7px;
+      border: solid 1px black;
+      border-radius: 4px;
+      box-sizing: border-box;
+      margin-top: 6px;
+      margin-bottom: 16px;
+      resize: vertical;
+    }
+
+    input[type=submit] {
+      width: 100%;
+      color: #AFAFAF;
+      background-color: black;
+      padding: 7px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    #message {
+      margin-top: -8px;
+    }
+
+    #send {
+      margin-top: 4px;
+      text-align: center;
+    }
+
+    #search {
+      width: 100%;
+      position: relative;
+      display: flex;
+    }
+
+    #searchTerm {
+      width: 100%;
+      border: 3px solid black;
+      border-right: none;
+      padding: 5px;
+      height: 36px;
+      border-radius: 5px 0 0 5px;
+      outline: none;
+      color: #9DBFAF;
+    }
+
+    #searchTerm:focus {
+      color: black;
+    }
+
+    #searchButton {
+      width: 40px;
+      height: 36px;
+      border: 2px solid black;
+      background: black;
+      text-align: center;
+      color: #fff;
+      border-radius: 0 5px 5px 0;
+      cursor: pointer;
+      font-size: 20px;
+    }
+
+    #wrap {
+      width: 50%;
+      position: relative;
+      float: left;
+      margin-top: 30px;
+    }
+
+    #line {
+      margin-left: 1%;
+      width: 98%;
+      background-color: black;
+      height: 1px;
+    }
+
+    .selectpicker {
+      left: -15px;
+    }
+
+    .footer-distributed {
+      background-image: linear-gradient(to top, #989898, #AFAFAF);
+      box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+      box-sizing: border-box;
+      width: 100%;
+      text-align: left;
+      font: bold 16px;
+      padding: 55px 50px;
+    }
+
+    .footer-distributed .footer-left,
+    .footer-distributed .footer-center,
+    .footer-distributed .footer-right {
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    .footer-distributed .footer-left {
+      width: 40%;
+    }
+
+    .footer-distributed h3 {
+      color: #ffffff;
+      font: normal 36px 'Open Sans', cursive;
+      margin: 0;
+    }
+
+    .footer-distributed h3 span {
+      color: lightseagreen;
+    }
+
+    .footer-distributed .footer-links {
+      color: #ffffff;
+      margin: 20px 0 12px;
+      padding: 0;
+    }
+
+    .footer-distributed .footer-links a {
+      display: inline-block;
+      line-height: 1.8;
+      font-weight: 400;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .footer-distributed .footer-company-name {
+      color: white;
+      font-size: 16px;
+      font-weight: normal;
+      margin: 0;
+    }
+
+    .footer-distributed .footer-center {
+      width: 35%;
+    }
+
+    .footer-distributed .footer-center i {
+      background-color: #33383b;
+      color: #ffffff;
+      font-size: 25px;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 42px;
+      margin: 10px 15px;
+      vertical-align: middle;
+    }
+
+    .footer-distributed .footer-center i.fa-envelope {
+      font-size: 17px;
+      line-height: 38px;
+    }
+
+    .footer-distributed .footer-center p {
+      display: inline-block;
+      color: #ffffff;
+      font-weight: 400;
+      vertical-align: middle;
+      margin: 0;
+    }
+
+    .footer-distributed .footer-center p span {
+      display: block;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 2;
+    }
+
+    .footer-distributed .footer-center p a {
+      color: lightseagreen;
+      text-decoration: none;
+      ;
+    }
+
+    .footer-distributed .footer-links a:before {
+      content: "|";
+      font-weight: 300;
+      font-size: 20px;
+      left: 0;
+      color: #fff;
+      display: inline-block;
+      padding-right: 5px;
+    }
+
+    .footer-distributed .footer-links .link-1:before {
+      content: none;
+    }
+
+    .footer-distributed .footer-right {
+      width: 20%;
+    }
+
+    .footer-distributed .footer-company-about {
+      line-height: 20px;
+      color: white;
+      font-size: 16px;
+      font-weight: normal;
+      margin: 0;
+    }
+
+    .footer-distributed .footer-company-about span {
+      display: block;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .footer-distributed .footer-icons {
+      margin-top: 25px;
+    }
+
+    .footer-distributed .footer-icons a {
+      display: inline-block;
+      width: 35px;
+      height: 35px;
+      cursor: pointer;
+      background-color: #33383b;
+      border-radius: 2px;
+      font-size: 20px;
+      color: #ffffff;
+      text-align: center;
+      line-height: 35px;
+      margin-right: 3px;
+      margin-bottom: 5px;
+    }
+
+    #box {
+      width: 90%;
+      font-size: 16px;
+      font-family: cursive;
+      height: 430px;
+      margin: 0 auto;
+    }
+
+    #wattekst {
+      padding-top: 20px;
+      width: 50%;
+      height: 430px;
+      float: left;
+    }
+
+    .lineheight {
+      line-height: 15px;
+    }
+
+    .height {
+      line-height: 10px;
+    }
+
+    .tiny {
+      line-height: 4px;
+    }
+
+    .center {
+      width: 50%;
+      margin: 0 auto;
+    }
+
+    .head {
+      font-size: 20px;
+      line-height: 20px;
+    }
+
+    #wrapper {
+      margin: 0 auto;
+      width: 90%;
+      height: 700px;
+      font-size: 16px;
+      font-family: cursive;
+    }
+
+    #meertekst {
+      height: 700px;
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Placeholder for entire page -->
+  <div id="container">
+
+
+    <!-- Header Section -->
+    <div id="header">
+
+      <div id="holdersome">
+        <!-- Login Placeholder -->
+        <div id="loginholder">
+          <!-- Login/Register -->
+          <div id="login">
+            <i class="fas fa-user-circle fa-3x"></i>
+          </div>
+        </div>
+        <!-- Language Placeholder -->
+        <div id="languageholder">
+          <!-- Language Switcher -->
+          <div id="language">
+            <select class="selectpicker" data-width="fit">
+              <option data-content='<span class="flag-icon flag-icon-nl"></span> Nederlands'>Nederlands</option>
+              <option data-content='<span class="flag-icon flag-icon-gb"></span> Engels'>Engels</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Searchbar Placeholder -->
+      <div id="zoekholder">
+        <div id="bar">
+          <div id="wrap">
+            <!-- Search Bar -->
+            <div id="search">
+              <!-- Search  -->
+              <input type="text" id="searchTerm" placeholder="Zoeken... ">
+              <!-- Search Icon -->
+              <button type="submit" id="searchButton">
+                <i class="fa fa-search"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Logo 150px 90px -->
+      <div id="logo"></div>
+
+    </div>
+    <!-- End of Header -->
+
+
+    <!-- Navigation bar -->
+    <div id="navigation">
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="overons.html">Over Ons</a></li>
+        <li><a href="catalogus.html">Catalogus</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <div id="line"></div>
+
+    </div>
+    <!-- End of Navigation Bar -->
+
+    <div id="box">
+      <div id="wattekst">
+        <div class="head"><strong>Contact</strong></div>
+        <div class="lineheight">&nbsp;</div>
+        <div class="lineheight">&nbsp;</div>
+        <strong>Heb je een vraag?</strong>
+        <div class="lineheight">&nbsp;</div>
+        Het antwoord op de meeste vragen vind je op deze website. Heb je toch nog vragen? Neem dan contact met ons op:
+        <div class="lineheight">&nbsp;</div>
+        Telefoonnummer: <i class="fas fa-phone"></i> 04997-23432 (bereikbaar tussen 08:00u – 17:00u)<div class="height">
+          &nbsp;</div>
+        E-mailadres: <i class="fas fa-envelope fa-1x"></i><a href="mailto:info@entrefabriek.nl">
+          info@entrefabriek.nl</a>
+        <div class="height">&nbsp;</div>
+        Fax: <i class="fas fa-fax"></i> 010 202-2206
+        <div class="height">&nbsp;</div>
+        Locatie: <i class="fas fa-map-marker-alt fa-1x"></i> Morgenbroek 88. 1054 KP Eindhoven, Nederland <div
+          class="height">&nbsp;</div>
+        Let op! Vermeld in uw mail uw naam, geboortedatum, BSN en/of rekeningnummer met pincode, zodat we je sneller
+        kunnen helpen! Of vul het contact formulier in met al je personelijke gegevens!
+      </div>
+
+      <div id="contactform">
+        <div id="contactcenter">
+          <form>
+            <div class="center">
+              <input type="text" id="name" name="name" placeholder="Naam" required>
+            </div>
+            <div class="center">
+              <input type="email" id="email" name="email" placeholder="Email" required>
+            </div>
+            <div class="center">
+              <textarea id="message" name="message" placeholder="Bericht"
+                style="min-height: 250px; max-height:300px;"></textarea>
+            </div>
+            <div class="center">
+              <div id="send"><input type="submit" value="Verstuur"></div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div id="wrapper">
+      <div id="meertekst">
+        <strong>Wilt u liever een afspraak met ons eigenaar en/of secretaresse?</strong>
+        <div class="lineheight">&nbsp;</div>
+        Dat is mogelijk! Als u een afspraak met Marcel Berkien wil mail dan naar <a
+          href="mailto:marcelberkien@mail.nl">marcelberkien@mail.nl</a>, vergeet niet uw naam in het bericht te
+        plaatsen. Of wilt u liever een afspraak met Patricia Derkson? Mail met plezier naar <a
+          href="mailto:patriciaderkson@mail.nl">patriciaderkson@mail.nl</a>, vergeet ook daarbij niet uw naam in het
+        bericht te plaatsen.<div class="lineheight">&nbsp;</div>
+        <div class="lineheight">&nbsp;</div>
+        <strong>FAQ</strong>
+        <div class="lineheight">&nbsp;</div>
+        De grootte van je FAQ wordt voornamelijk bepaald door de grootte van je bedrijf en het aantal producten of
+        diensten dat je verkoopt. Indien je een klein (startend) bedrijf bent en slechts één artikel verkoopt, dan kun
+        je het waarschijnlijk af met 5 categorieën en per categorie maximaal 5 vragen. Bijvoorbeeld ‘Bezorging’,
+        ‘Product’, ‘Betalingen’, ‘Account’ en ‘Contact’. Er is simpelweg niet zo veel over te vertellen dan wanneer je
+        honderden verschillende producten en/of diensten verkoopt. En dat is maar goed ook, want hoe minder de klant
+        hoeft te zoeken, hoe sneller hij geholpen is en dus ook hoe tevredener hij is.
+        <div class="lineheight">&nbsp;</div>Daarnaast is de kans dat hij alsnog contact met je op moet nemen omdat hij
+        niet kan vinden wat hij zoekt een stuk kleiner. Het is belangrijk om de vragen altijd te categoriseren, ook al
+        heb je er weinig. Op die manier maak je zoeken nog makkelijker en sneller voor de klant en kan deze niet in de
+        war raken. Het is prima als een categorie slechts twee vragen bevat. Des te sneller heeft de klant hem gevonden.
+        <div class="lineheight">&nbsp;</div>
+        <div class="lineheight">&nbsp;</div>
+        Wanneer je je FAQ-pagina en eventuele FAQ-artikelen klaar hebt, is de vraag nog waar je deze gaat plaatsen.
+        Omdat je FAQ bedoeld is om je klanten zichzelf te laten helpen zodat ze geen contact op te hoeven nemen met je
+        klantenservice, is het belangrijk dat ze weten dat deze bestaat. Een FAQ zet je daarom altijd op een prominente
+        plaats zodat je websitebezoekers deze altijd gemakkelijk kunnen vinden. Over de plaatsing van je FAQ-pagina zijn
+        we een heel apart artikel aan het schrijven: Waar plaats je een FAQ-pagina?
+        <div class="lineheight">&nbsp;</div>
+        <div class="lineheight">&nbsp;</div>
+        Zoals al vaker vermeld, is een FAQ bedoeld om je klanten te helpen en tijd te besparen. Wat je dus wilt
+        voorkomen is dat ze lang moeten zoeken omdat je FAQ niet op de juiste manier is vormgegeven. Iedere
+        websitebouwer kan je vertellen aan welke eisen een overzichtelijke webpagina zou moeten voldoen. Maar hier nog
+        even in het kort: de pagina toont het liefst in één oogopslag wat de categorieën zijn. Op die manier kan de
+        bezoeker gemakkelijk navigeren.
+        <div class="lineheight">&nbsp;</div>
+        Vervolgens worden er een aantal vragen per categorie getoond. Indien je maar weinig vragen in je FAQ hebt,
+        kunnen deze vragen allemaal op één pagina getoond worden. Het blijft echter handig om ze op de een of andere
+        manier te ordenen, bijvoorbeeld op categorie. Wanneer je categorieën toont, kun je deze geordend over de pagina
+        weergeven. Veel ruimte tussen de vakken is dan goed om overzicht te creëren. Wanneer je de vragen direct op de
+        pagina zet, is het handiger om deze allemaal onder elkaar te tonen omdat het hier om meer tekst gaat.
+      </div>
+    </div>
+
+    <!-- Footer Section -->
+    <div id="footer">
+      <footer class="footer-distributed">
+
+        <div class="footer-left">
+
+          <img src="logo.jpg" style="width: 300px; height: 150px;">
+
+          <p class="footer-links">
+            <a href="home.html" class="link-1">Home</a>
+
+            <a href="overons.html">Over Ons</a>
+
+            <a href="catalogus.html">Catalogus</a>
+
+            <a href="contact.html">Contact</a>
+
+          </p>
+
+          <p class="footer-company-name">Entré-Fabriek © 2019</p>
+        </div>
+
+        <div class="footer-center">
+
+          <div>
+            <i class="fa fa-map-marker"></i>
+            <p><span>Morgenbroek 88</span> 1054 KP Eindhoven, Nederland</p>
+          </div>
+
+          <div>
+            <i class="fa fa-phone"></i>
+            <p>04997-23432</p>
+          </div>
+
+          <div>
+            <i class="fa fa-envelope"></i>
+            <p><a href="mailto:info@entrefabriek.nl">info@entrefabriek.nl</a></p>
+          </div>
+
+        </div>
+
+        <div class="footer-right">
+
+          <p class="footer-company-about">
+            <span>Onze Slogan</span>
+            Geef uw leerlingen de ruimte om te leren!
+          </p>
+
+          <div class="footer-icons">
+
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+
+          </div>
+
+        </div>
+      </footer>
+    </div>
+
+  </div>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.2/js/bootstrap-select.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+  <script id="rendered-js">
+    $(function () {
+      $('.selectpicker').selectpicker();
+    });
+  </script>
+
+</body>
+
+</html>

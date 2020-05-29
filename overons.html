@@ -1,0 +1,649 @@
+<!-- Versie: 1.1 -->
+<!-- Author: Aron Dosti & Yunyi Xie -->
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://kit.fontawesome.com/b57a0b7ac6.js" crossorigin="anonymous"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.2/css/bootstrap-select.min.css"
+        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.1.0/css/flag-icon.min.css" rel="stylesheet">
+    <title>Over Ons - Entré-Fabriek.nl</title>
+    <style>
+        #container {
+            width: 100%;
+            position: absolute;
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #AFAFAF;
+        }
+
+        #header {
+            width: 100%;
+            height: 90px;
+            background-image: linear-gradient(to bottom, #989898, #AFAFAF);
+            margin: 0 auto;
+        }
+
+        #zoekholder {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        #bar {
+            width: 500px;
+            height: 90px;
+            float: left;
+            position: relative;
+        }
+
+        #navigation {
+            margin: 0 auto;
+            width: 30%;
+            height: 30px;
+            padding-top: -5px;
+            position: relative;
+            text-align: center;
+        }
+
+        #search {
+            width: 100%;
+            position: relative;
+            display: flex;
+        }
+
+        #searchTerm {
+            width: 100%;
+            border: 3px solid black;
+            border-right: none;
+            padding: 5px;
+            height: 36px;
+            border-radius: 5px 0 0 5px;
+            outline: none;
+            color: #9DBFAF;
+        }
+
+        #searchTerm:focus {
+            color: black;
+        }
+
+        #searchButton {
+            width: 40px;
+            height: 36px;
+            border: 2px solid black;
+            background: black;
+            text-align: center;
+            color: #fff;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        #wrap {
+            width: 50%;
+            position: relative;
+            float: left;
+            margin-top: 30px;
+        }
+
+        #logo {
+            margin: 0 auto;
+            width: 150px;
+            height: 90px;
+            background-image: url("logo.jpg");
+            background-size: cover;
+        }
+
+        #navigation ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            position: relative;
+            z-index: 2;
+            display: block;
+            padding: 2px;
+        }
+
+        #navigation ul li {
+            display: inline-block;
+        }
+
+        #navigation a {
+            display: block;
+            padding: 0 10px;
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+        #navigation a:hover {
+            color: black;
+            text-decoration: underline;
+        }
+
+        #login {
+            float: right;
+            margin: 0 auto;
+            padding-top: 30px;
+            width: 35px;
+            height: 35px;
+        }
+
+        #loginholder {
+            width: 55px;
+            height: 90px;
+            position: relative;
+            float: right;
+        }
+
+        #languageholder {
+            height: 90px;
+            width: 150px;
+            float: right;
+            position: relative;
+            padding: -5px;
+        }
+
+        #overonsholder {
+            width: 100%;
+        }
+
+        #language {
+            height: 90px;
+            width: 150px;
+            margin-top: 30px;
+            margin-left: 20px;
+        }
+
+        #tekst {
+            width: 90%;
+            position: relative;
+            margin: 0 auto;
+            margin-top: 20px;
+            font-family: cursive;
+            font-size: 16px;
+        }
+
+        #banner {
+            width: 100%;
+            height: 276px;
+            background-image: linear-gradient(to top, #989898, #AFAFAF);
+        }
+
+        #break {
+            padding-top: 10px;
+        }
+
+        #footer {
+            text-align: center;
+            width: 100%;
+            height: 40px;
+            background-color: #989898;
+        }
+
+        .head {
+            font-size: 20px;
+            line-height: 20px;
+        }
+
+        #line {
+            margin-left: 1%;
+            width: 98%;
+            background-color: black;
+            height: 1px;
+        }
+
+        .selectpicker {
+            left: -15px;
+        }
+
+        .footer-distributed {
+            background-image: linear-gradient(to top, #989898, #AFAFAF);
+            box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+            box-sizing: border-box;
+            width: 100%;
+            text-align: left;
+            font: bold 16px;
+            padding: 55px 50px;
+        }
+
+        .footer-distributed .footer-left,
+        .footer-distributed .footer-center,
+        .footer-distributed .footer-right {
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .footer-distributed .footer-left {
+            width: 40%;
+        }
+
+        .footer-distributed h3 {
+            color: #ffffff;
+            font: normal 36px 'Open Sans', cursive;
+            margin: 0;
+        }
+
+        .footer-distributed h3 span {
+            color: lightseagreen;
+        }
+
+        .footer-distributed .footer-links {
+            color: #ffffff;
+            margin: 20px 0 12px;
+            padding: 0;
+        }
+
+        .footer-distributed .footer-links a {
+            display: inline-block;
+            line-height: 1.8;
+            font-weight: 400;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .footer-distributed .footer-company-name {
+            color: white;
+            font-size: 16px;
+            font-weight: normal;
+            margin: 0;
+        }
+
+        .footer-distributed .footer-center {
+            width: 35%;
+        }
+
+        .footer-distributed .footer-center i {
+            background-color: #33383b;
+            color: #ffffff;
+            font-size: 25px;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 42px;
+            margin: 10px 15px;
+            vertical-align: middle;
+        }
+
+        .footer-distributed .footer-center i.fa-envelope {
+            font-size: 17px;
+            line-height: 38px;
+        }
+
+        .footer-distributed .footer-center p {
+            display: inline-block;
+            color: #ffffff;
+            font-weight: 400;
+            vertical-align: middle;
+            margin: 0;
+        }
+
+        .footer-distributed .footer-center p span {
+            display: block;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 2;
+        }
+
+        .footer-distributed .footer-center p a {
+            color: lightseagreen;
+            text-decoration: none;
+            ;
+        }
+
+        .footer-distributed .footer-links a:before {
+            content: "|";
+            font-weight: 300;
+            font-size: 20px;
+            left: 0;
+            color: #fff;
+            display: inline-block;
+            padding-right: 5px;
+        }
+
+        .footer-distributed .footer-links .link-1:before {
+            content: none;
+        }
+
+        .footer-distributed .footer-right {
+            width: 20%;
+        }
+
+        .footer-distributed .footer-company-about {
+            line-height: 20px;
+            color: white;
+            font-size: 16px;
+            font-weight: normal;
+            margin: 0;
+        }
+
+        .footer-distributed .footer-company-about span {
+            display: block;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .footer-distributed .footer-icons {
+            margin-top: 25px;
+        }
+
+        .footer-distributed .footer-icons a {
+            display: inline-block;
+            width: 35px;
+            height: 35px;
+            cursor: pointer;
+            background-color: #33383b;
+            border-radius: 2px;
+            font-size: 20px;
+            color: #ffffff;
+            text-align: center;
+            line-height: 35px;
+            margin-right: 3px;
+            margin-bottom: 5px;
+        }
+
+        .lineheight {
+            line-height: 15px;
+        }
+
+        #team1 {
+            height: 350px;
+            width: 90%;
+            margin: 0 auto;
+            font-family: cursive;
+            font-size: 16px;
+        }
+
+        #holder1 {
+            width: 40%;
+            float: right;
+        }
+
+        #foto1 {
+            margin: 0 auto;
+            height: 300px;
+            width: 300px;
+            background-size: cover;
+            overflow: hidden;
+            box-shadow: 8px 8px 2px 2px #808080;
+            border-radius: 8px;
+        }
+
+        #tekst1 {
+            width: 60%;
+        }
+
+        #team2 {
+            height: 350px;
+            width: 90%;
+            margin: 0 auto;
+            font-family: cursive;
+            font-size: 16px;
+        }
+
+        #holder2 {
+            height: 300px;
+            width: 40%;
+            float: right;
+        }
+
+        #foto2 {
+            margin: 0 auto;
+            height: 300px;
+            width: 300px;
+            background-size: cover;
+            overflow: hidden;
+            box-shadow: 8px 8px 2px 2px #808080;
+            border-radius: 8px;
+        }
+
+        #tekst2 {
+            width: 60%;
+        }
+
+        #holdersome {
+            width: 90%;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Placeholder for entire page -->
+    <div id="container">
+
+
+        <!-- Header Section -->
+        <div id="header">
+
+            <div id="holdersome">
+                <!-- Login Placeholder -->
+                <div id="loginholder">
+                    <!-- Login/Register -->
+                    <div id="login">
+                        <i class="fas fa-user-circle fa-3x"></i>
+                    </div>
+                </div>
+                <!-- Language Placeholder -->
+                <div id="languageholder">
+                    <!-- Language Switcher -->
+                    <div id="language">
+                        <select class="selectpicker" data-width="fit">
+                            <option data-content='<span class="flag-icon flag-icon-nl"></span> Nederlands'>Nederlands
+                            </option>
+                            <option data-content='<span class="flag-icon flag-icon-gb"></span> Engels'>Engels</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Searchbar Placeholder -->
+            <div id="zoekholder">
+                <div id="bar">
+                    <div id="wrap">
+                        <!-- Search Bar -->
+                        <div id="search">
+                            <!-- Search  -->
+                            <input type="text" id="searchTerm" placeholder="Zoeken... ">
+                            <!-- Search Icon -->
+                            <button type="submit" id="searchButton">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Logo 150px 90px -->
+            <div id="logo"></div>
+
+        </div>
+
+
+        <!-- Navigation bar -->
+        <div id="navigation">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="overons.html">Over Ons</a></li>
+                <li><a href="catalogus.html">Catalogus</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+
+            <div id="line"></div>
+
+        </div>
+
+        <!-- Body Section -->
+        <!-- Over Ons Holder -->
+        <div id="overonsholder">
+            <!-- Paragraph -->
+            <div id="tekst">
+                <div class="head"><strong>Over Ons</strong></div>
+                <div class="lineheight">&nbsp;</div>
+                Entré-Fabriek is dé plek voor het boeken van les- en workshopruimtes in Eindhoven en is onderdeel
+                van het Spaans cultureel centrum ‘’Molinos de Viento’’. Entré-Fabriek is een initiatief van Michael
+                Kabela, directeur van Spaans cultureel centrum ‘Molinos de Viento’ te Eindhoven.<div class="lineheight">
+                    &nbsp;</div>
+                Ons pand aan de Utrechtsedwarsstraat wordt al meer dan 35 jaar gebruikt voor taalcursussen,
+                culturele avonden en andere activiteiten. Op veel avonden zijn hier diverse cursussen te volgen.
+                Voorheen werden de ruimtes overdag en in de avond verder door niemand gebruikt, maar toen één
+                van de cursisten vroeg of zij de ruimte mocht gebruiken voor het geven van een workshop als die
+                beschikbaar was, ging het lampje branden!<div class="lineheight">&nbsp;</div>
+                <div class="head"><strong>Missie & visie</strong></div>
+                <div class="lineheight">&nbsp;</div>
+                De vraag naar lesruimtes in Eindhoven blijft stijgen en daar proberen wij nu zo goed mogelijk op
+                in te spelen met les- en cursusruimtes die zijn voorzien van alle faciliteiten.
+                De missie van Entré-Fabriek is cursusleiders en workshop docenten de ruimte bieden om inspirerende
+                cursussen of workshops te geven, zodat een ieder, na het volgen van een cursus of workshop,
+                geïnspireerd het lokaal uit loopt.<div class="lineheight">&nbsp;</div>
+                Entré-Fabriek verzorgt de leslokalen inclusief de gewenste faciliteiten, zodat cursusleiders en
+                workshop docenten zich zorgeloos kunnen focussen op dat wat zij het liefste doen.<div
+                    class="lineheight">&nbsp;</div>
+                <div class="head"><strong>Ruimtes</strong></div>
+                <div class="lineheight">&nbsp;</div>
+                De oppervlakte en de lichtinval van de ruimtes maken deze erg populair. De meeste
+                ruimtes/lokalen bevinden zich aan onze binnentuin, waardoor de omgeving erg rustig is. Inmiddels
+                worden de ruimtes regelmatig door vaste huurders gebruikt. Veel Eindhovense workshop docenten,
+                maar ook een aantal cursusleiders uit andere windstreken komen regelmatig bij ons terug.
+            </div>
+        </div>
+
+
+        <div id="team1">
+            <div class="lineheight">&nbsp;</div>
+            <div id="holder1">
+                <div id="foto1">
+                    <img src="1.jpg" style="width: 300px; height: 300px;">
+                </div>
+            </div>
+            <div id="tekst1">
+                <div class="lineheight">&nbsp;</div>
+                <div class="head"><strong>Onze Team</strong></div>
+                <div class="lineheight">&nbsp;</div>
+                <div class="lineheight">&nbsp;</div>
+                <strong>Marcel Berkien</strong>
+                <div class="lineheight">&nbsp;</div>
+                Dit is Marcel Berkien. Hij is de eigennaar van Entré-Fabriek. Verzorging lessen webdesign HTML5
+                en programmeren in PHP en MySQL, javascript, jQuery, Ajax, UML en applicatie-ontwerp. Daarnaast ook
+                Student Loopbaan Begeleider (SLB) en assessor voor stagebeoordelingen. Working as a teacher on the
+                subjects web design HTML5, programming in PHP and MySQL, including javascript, jQuery, Ajax, UML and
+                application design. Besides teachting, I work also as a student career advisor and assessor for aptitude
+                tests.<div class="lineheight">&nbsp;</div>
+                <div class="lineheight">&nbsp;</div>
+                <div class="lineheight">&nbsp;</div>
+            </div>
+        </div>
+
+
+        <div id="team2">
+            <div class="lineheight">&nbsp;</div>
+            <div id="holder2">
+                <div id="foto2">
+                    <img src="2.jpg" style="width: 300px; height: 300px;">
+                </div>
+            </div>
+            <strong>Patricia Derkson</strong>
+            <div class="lineheight">&nbsp;</div>
+            <div id="tekst2">
+                Dit is Patricia Derkson. Zij is de secretaresse van Marcel Berkien. Na ruim tien jaar managementfuncties
+                in de zakelijke dienstverlening was het tijd om mijn passies te
+                volgen. Binnen korte tijd was Entré-Fabriek geboren en gezien de enthousiaste reacties was dat precies
+                op tijd.
+                Mijn visie is dat een lekkerder en gezonder leven voor iedereen makkelijk haalbaar is. De uitdaging is
+                om de juiste specialisten en combinatie van verschillende activiteiten te vinden. In het begin van mijn
+                burn out heb ik 3 maanden bij een psycholoog gelopen die niet de juiste persoon voor mij was. Maar omdat
+                ik geen energie had realiseerde ik mij dat pas na een paar maanden. Daarna heb ik zelf een programma
+                gemaakt met een Burn-out coach, yoga en gezond eten. En zie nu eens wat ik bereikt heb.
+            </div>
+        </div>
+
+
+
+        <!-- Footer Section -->
+        <div id="footer">
+            <footer class="footer-distributed">
+
+                <div class="footer-left">
+
+                    <img src="logo.jpg" style="width: 300px; height: 150px;">
+
+                    <p class="footer-links">
+                        <a href="home.html" class="link-1">Home</a>
+
+                        <a href="overons.html">Over Ons</a>
+
+                        <a href="catalogus.html">Catalogus</a>
+
+                        <a href="contact.html">Contact</a>
+
+                    </p>
+
+                    <p class="footer-company-name">Entré-Fabriek © 2019</p>
+                </div>
+
+                <div class="footer-center">
+
+                    <div>
+                        <i class="fa fa-map-marker"></i>
+                        <p><span>Morgenbroek 88</span> 1054 KP Eindhoven, Nederland</p>
+                    </div>
+
+                    <div>
+                        <i class="fa fa-phone"></i>
+                        <p>04997-23432</p>
+                    </div>
+
+                    <div>
+                        <i class="fa fa-envelope"></i>
+                        <p><a href="mailto:info@entrefabriek.nl">info@entrefabriek.nl</a></p>
+                    </div>
+
+                </div>
+
+                <div class="footer-right">
+
+                    <p class="footer-company-about">
+                        <span>Onze Slogan</span>
+                        Geef uw leerlingen de ruimte om te leren!
+                    </p>
+
+                    <div class="footer-icons">
+
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+
+                    </div>
+
+                </div>
+            </footer>
+        </div>
+
+    </div>
+
+    <!-- End of Container -->
+
+
+    <!-- Script Language Selector -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.2/js/bootstrap-select.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <script id="rendered-js">
+        $(function () {
+            $('.selectpicker').selectpicker();
+        });
+    </script>
+
+</body>
+
+</html>
